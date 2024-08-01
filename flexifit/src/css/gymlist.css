@@ -1,0 +1,76 @@
+.search-container {
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 10%; */
+    padding-left: 100px;
+    padding-right: 100px;
+
+}
+
+.search-container {
+    align-items: center;
+    display: flex;
+    flex: 1;
+}
+
+.filter {
+
+    display: flex;
+    list-style: none;
+    justify-content: left;
+    /* padding-right: 30px; */
+    padding: -20px;
+    /* margin-bottom: 40px; */
+    text-align: justify;
+
+}
+
+.filter h3 {
+    margin-right: 30px;
+}
+
+.filter textarea {
+    height: 30px;
+    width: 80px;
+    margin-top: 15px;
+    font-size: 25px;
+    border-radius: 5px;
+    border: 2px solid #2fdad4;
+}
+
+
+.filterlist {
+    border: 2px solid #412222;
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    transition: all 0.3s ease-in-out;
+    padding: 10px;
+    list-style-type: none;
+    border-radius: 25px;
+    height: 50px;
+}
+
+.gym-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.gym-item {
+    background-color: lightblue;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 250;
+    transition: transform 0.2s;
+}
+
+.gym-item:hover {
+    transform: scale(1.05);
+    /* Slightly enlarge the tile on hover */
+}

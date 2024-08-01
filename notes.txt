@@ -1,0 +1,146 @@
+1. after installing react router dom dependency 
+we have to wrap our applicaion inside broswer router 
+	to do this => import { BrowserRouter}  from 'react-router-dom'
+	in to index.js file
+	and wrap app inside browserrouter like this
+	<React.StrictMode>
+    		<BrowserRouter>
+      			<App />
+    		</BrowserRouter>
+
+  	</React.StrictMode>
+
+2. the routes that we want we have to specify them in routes attribute inside app.js file
+	before that we have to import them 
+	import { Routes, Route } from 'react-router-dom'; 
+	
+before specifying we will create pages and import them to App.js
+
+Home.js
+
+const Home = () => {
+    return (
+        <div><h2>Home Page</h2></div>
+    )
+}
+export default Home;
+
+similaryly other files
+
+
+
+
+
+
+3. in src/pages create Home.js, About.js, Contact.js
+import these pages in App.js
+	import Home from './pages/Home';
+	import About from './pages/About';
+	import Contact from './pages/Contact';
+
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Home />} />
+      </Routes>
+
+4. adding navigation bar to the project 
+    src/components/Navbar.js
+
+Navbar.js
+
+    import { Link } from "react-router-dom";
+
+    const Navbar = () => {
+        return (
+            <ul>
+                <li>
+                    <Link to='/'>Home</Link>
+                    <Link to='/about'>Aboutout</Link>
+                    <Link to='/contact'>Contact</Link>
+
+                </li>
+            </ul>
+
+        )
+    }
+    export default Navbar;
+
+5. after createing navbar imort that in to App.js and call it 
+
+    import Navbar from './components/Navbar';
+    <header>
+            <Navbar/>
+    </header>
+
+all the nav bar items will appear at center to make it to right 
+    while styling
+    element.style{
+        display : flex;
+        justify-content : right;
+        padding-right : 30px
+    }
+
+6. adding styling to ul in app.css
+    ul{
+        display: flex;
+        list-style: none;
+        justify-content: right;
+        padding-right: 30px;
+
+    }
+
+
+6. this was all done in older verison of react-router-dom
+    in new version we can create our own Browser router
+
+
+7. newer veron of router 
+index.js
+
+    import Home from './pages/Home';
+    import About from './pages/About';
+    import Contact from './pages/Contact';
+
+    import {
+    createBrowserRouter,
+    createRoutesFromElements,
+    Route,
+    RouterProvider,
+    } from "react-router-dom";
+
+
+    const router = createBrowserRouter(
+    createRoutesFromElements(
+        <Route path="/" element={<App />}>
+        <Route index element={<Home />} />
+        <Route path='about' element={<About />} />
+        <Route path='contact' element={<Contact />} />
+        </Route>
+    )
+    )
+
+
+    const root = ReactDOM.createRoot(document.getElementById('root'));     // older way of specifying routes
+    root.render(
+    <React.StrictMode>
+        {/* <BrowserRouter> */}
+        {/* <App /> */}
+        {/* </BrowserRouter> */}
+        <RouterProvider router={router} />
+
+    </React.StrictMode>
+    );
+
+    reportWebVitals();
+
+8. now the due to changes made our application dont know where to display content of pages
+to correct it we have to do 
+    use one oultlet from react router dom
+
+    in App.js
+    
+    
+
+
+

@@ -1,0 +1,42 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4d79fe;
+    padding: 1rem 2rem;
+}
+
+.logo a {
+    color: white;
+    text-decoration: none;
+    font-size: 3rem;
+    font-weight: bold;
+}
+
+ul {
+
+    display: flex;
+    list-style: none;
+    justify-content: right;
+    padding-right: 30px;
+
+
+}
+
+.links {
+    color: white;
+    margin-right: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.ULLinks a {
+    color: white;
+}
+
+
+
+.active {
+    color: rgb(73, 213, 255);
+}
